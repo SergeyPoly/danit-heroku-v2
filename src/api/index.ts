@@ -7,6 +7,7 @@ import authRouter from './auth';
 import { authMiddleware } from './auth/auth.middleware';
 import itemsRouter from './items';
 import purchasesRouter from './purches';
+import chatsRouter from './chats';
 
 export const registerRouters = (app: Express) => {
   app.use(json());
@@ -28,6 +29,7 @@ export const registerRouters = (app: Express) => {
   app.use('/purchases', purchasesRouter);
   app.use('/items', itemsRouter);
   app.use('/accounts', accountsRouter);
+  app.use('/chats', chatsRouter);
 
   app.get('/chats', async (req: IRequest, res) => {
     const chats = await req.user.getChats();
