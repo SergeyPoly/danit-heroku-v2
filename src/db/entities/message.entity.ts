@@ -15,8 +15,8 @@ export class MessageEntity extends Base {
   public chatId: number;
 
   @ManyToOne(() => UserEntity)
-  public sender: Promise<UserEntity>;
+  public sender: UserEntity;
 
   @ManyToOne(() => ChatEntity)
-  public chat: Promise<ChatEntity>;
+  public chat: ChatEntity;
 }
